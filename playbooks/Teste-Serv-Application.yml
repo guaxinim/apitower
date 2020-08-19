@@ -5,7 +5,7 @@
    tasks: 
 
      - name: Connect to website using a previously stored cookie   
-        uri:
+       uri:
         url: "{{ v_servidor_teste }}"
         method: GET
         status_code: 200  
