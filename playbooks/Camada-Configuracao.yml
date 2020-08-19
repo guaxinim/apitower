@@ -8,6 +8,12 @@
 
       - name: seta configuracao do apache 
         template:
+         src: templates/index.html.j2
+         dest: /var/www/html/index.html:w!
+
+
+      - name: seta configuracao do apache 
+        template:
          src: templates/httpd.conf.j2
          dest: /etc/httpd/conf/httpd.conf
         notify: 
