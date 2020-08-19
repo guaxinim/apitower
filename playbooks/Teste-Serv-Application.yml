@@ -8,4 +8,6 @@
        uri:
         url: "{{ v_servidor_teste }}"
         method: GET
-        status_code: 200  
+        return_content: yes
+        register: _result
+          
