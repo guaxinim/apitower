@@ -13,12 +13,16 @@
           pool_ids:
             - 8a85f9863f14fed3013f82b2c7b33615
 
-     - name: disable repositorio 
-       shell: 'subscription-manager repos --disable=*'
+     
 
-     - name:  habilita repositorio 
-       yum_repository:
-         name: rhel-7-server-rpms 
-         state: present
-         enabled: yes
-       #notify: yum-clean-metadata
+     - name: Disable all RHSM repositories
+       rhsm_repository:
+         name: '*'
+         state: disabled
+
+     - name: Disable all repositories except rhel-7-server-rpms
+       rhsm_repository:
+         name: rhel-7-server-rpms
+      
+
+     
