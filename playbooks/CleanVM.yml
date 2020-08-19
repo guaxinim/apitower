@@ -39,6 +39,6 @@
      - name: reseta configuracao de rede 
        template:
          src: templates/ifcfg-ens192.j2
-         dest: /etc/sysconfig/network/ifcfg-ens192
+         dest: /etc/sysconfig/network-scripts/ifcfg-ens192
 
        
