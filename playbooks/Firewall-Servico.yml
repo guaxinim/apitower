@@ -1,0 +1,16 @@
+---
+-
+   name: instalacao camada de server application 
+   hosts: all 
+   tasks: 
+
+ 
+    - name: configuracao de firewall padrao Caixa 
+      firewalld:
+         service: "{{ item }}"
+         permanent: true
+         state: enabled
+         immediate: true 
+      with_items: 
+         - "{{ servico_01 }}"
+         - "{{ servico_02 }}" 

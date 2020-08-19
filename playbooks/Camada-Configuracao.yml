@@ -1,0 +1,12 @@
+---
+-
+   name: configuração apache 
+   hosts: all 
+
+ 
+
+   - name: enable e inicia servico 
+     systemd: 
+         name: httpd 
+         state: started
+         enabled: yes 
