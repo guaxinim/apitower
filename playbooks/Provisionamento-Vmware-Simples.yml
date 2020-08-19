@@ -42,21 +42,16 @@
        #   type: iso
        #   iso_path: "[datastore1] livecd.iso"
         networks:
-        - name: VM Network
-          #mac: aa:bb:dd:aa:00:14
-          type: static 
-          allow_guest_control: yes
-          #ip: "{{ ip_address }}"
+        - name: VM Network 
           ip: 192.168.0.30
-          netmask: 255.255.255.0 
+          netmask: 255.255.255.0
           gateway: 192.168.0.10
-          dns_servers: 192.168.0.220
-          wake_on_lan: yes
-          start_connected: yes
-        customization: 
-          hostname: elvis.labs.corp
-          #hostname: "{{ vm_name }}"
+          mac: aa:bb:dd:aa:00:14
           domain: labs.corp
+          start_connected: yes
+          wake_on_lan: yes
+          dns_servers:
+          - 192.168.0.200
         wait_for_ip_address: yes
      delegate_to: localhost
      register: deploy
