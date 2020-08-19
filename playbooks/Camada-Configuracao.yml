@@ -6,7 +6,7 @@
 
  
 
-      - name: reseta configuracao de rede 
+      - name: seta configuracao do apache 
         template:
          src: templates/httpd.conf.j2
          dest: /etc/httpd/conf/httpd.conf
