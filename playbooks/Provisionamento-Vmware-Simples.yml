@@ -45,7 +45,7 @@
         - name: VM Network
           #mac: aa:bb:dd:aa:00:14
           type: static 
-          #allow_guest_control: yes
+          allow_guest_control: yes
           #ip: "{{ ip_address }}"
           ip: 192.168.0.30
           netmask: 255.255.255.0 
