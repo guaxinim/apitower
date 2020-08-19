@@ -51,8 +51,8 @@
           netmask: 255.255.255.0 
           gateway: 192.168.0.10
           dns_servers: 192.168.0.220
-          #wake_on_lan: yes
-          #start_connected: yes
+          wake_on_lan: yes
+          start_connected: yes
         customization: 
           hostname: elvis.labs.corp
           #hostname: "{{ vm_name }}"
