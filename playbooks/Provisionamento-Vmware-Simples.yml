@@ -44,13 +44,13 @@
         - name: VM Network
           #mac: aa:bb:dd:aa:00:14
           type: static 
-          allow_guest_control: yes
+          #allow_guest_control: yes
           ip: "{{ ip_address }}"
           netmask: 255.255.255.0 
           gateway: 192.168.0.10
           dns_servers: 192.168.0.220
-          wake_on_lan: yes
-          start_connected: yes
+          #wake_on_lan: yes
+          #start_connected: yes
         customization: 
           hostname: "{{ vm_name }}"
           domain: labs.corp
