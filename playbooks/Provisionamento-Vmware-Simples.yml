@@ -16,7 +16,7 @@
         folder: /ansiblevms
         name: "{{ vm_name }}"
         state: poweredon
-        template: rhel7-v02
+        template: t-rhel7-v03
         disk:
         - size_gb: 15
           type: thin
