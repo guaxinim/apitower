@@ -16,7 +16,7 @@
         folder: /ansiblevms
         name: "{{ vm_name }}"
         state: poweredon
-        template: rhel-07-basico
+        template: rhel7-v02
         disk:
         - size_gb: 15
           type: thin
@@ -42,13 +42,18 @@
        #   iso_path: "[datastore1] livecd.iso"
         networks:
         - name: VM Network
-          mac: aa:bb:dd:aa:00:14
+          #mac: aa:bb:dd:aa:00:14
           type: static 
           allow_guest_control: yes
           ip: "{{ ip_address }}"
           netmask: 255.255.255.0 
           gateway: 192.168.0.10
+          dns_servers: 192.168.0.220
           wake_on_lan: yes
+          start_connected: yes
+        customization: 
+          hostname: "{{ vm_name }}"
+          domain: labs.corp
         wait_for_ip_address: yes
      delegate_to: localhost
      register: deploy
