@@ -2,16 +2,21 @@
 -
    name: configuração da camada de configuracao apache 
    hosts: all 
+   tasks: 
 
  
 
-   - name: reseta configuracao de rede 
-     template:
-         src: templates/httpd.j2
+      - name: reseta configuracao de rede 
+        template:
+         src: templates/httpd.conf.j2
          dest: /etc/httpd/conf/httpd.conf
-   
-   - name: enable e inicia servico 
-     systemd: 
+        notify: 
+          - reload-service
+      
+   handlers: 
+
+      - name: reload-service 
+        systemd: 
          name: httpd 
-         state: started
+         state: restart
          enabled: yes 
