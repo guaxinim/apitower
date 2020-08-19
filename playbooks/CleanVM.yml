@@ -13,10 +13,14 @@
        rhsm_repository:
          name: '*'
          state: disabled
+       ignore_errors: yes
+
 
      - name: remove subscricao
        redhat_subscription:
           state: absent
+       ignore_errors: yes
+
       
      - name: shell subscription clen 
        shell: subscription-manager clean
