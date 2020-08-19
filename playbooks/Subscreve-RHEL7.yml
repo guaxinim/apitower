@@ -20,5 +20,5 @@
        yum_repository:
          name: rhel-7-server-rpms 
          state: present
-        enabled: yes
+         enabled: yes
        #notify: yum-clean-metadata
