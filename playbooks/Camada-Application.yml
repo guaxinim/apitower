@@ -1,0 +1,15 @@
+---
+-
+   name: instalacao camada de server application 
+   hosts: all 
+
+   - name: instala apache 
+     yum: 
+       name: httpd 
+       state: latest 
+
+   - name: enable e inicia servico 
+     systemd: 
+         name: httpd 
+         state: started
+         enabled: yes 
