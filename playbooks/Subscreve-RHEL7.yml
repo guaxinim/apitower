@@ -1,0 +1,23 @@
+---
+-
+   name: instalacao camada de server application 
+   hosts: all 
+   tasks: 
+
+     - name: Registro usando usuario e senha no RHSM 
+       redhat_subscription:
+          state: present
+          username: "{{ user_nome }}"
+          password: "{{ user_senha }}"
+          auto_attach: true
+          pool_ids:
+            - 8a85f9863f14fed3013f82b2c7b33615
+
+     - name: disable repositorio 
+       shell: 'subscription-manager repos --disable=*'
+
+     - name:  habilita repositorio 
+       yum_repository:
+         name: rhel-7-server-rpms 
+         state: absent
+       notify: yum-clean-metadata
