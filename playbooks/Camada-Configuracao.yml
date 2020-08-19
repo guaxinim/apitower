@@ -18,5 +18,5 @@
       - name: reload-service 
         systemd: 
          name: httpd 
-         state: restart
+         state: reloaded
          enabled: yes 
