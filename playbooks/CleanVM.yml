@@ -37,7 +37,7 @@
        shell:  rm -f /etc/udev/rules.d/70-persistent-net.rules
 
      - name: reseta configuracao de rede 
-       templates:
+       template:
          src: templates/ifcfg-ens192.j2
          dest: /etc/sysconfig/network/ifcfg-ens192
 
