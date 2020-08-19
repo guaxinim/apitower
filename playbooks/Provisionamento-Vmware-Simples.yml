@@ -14,7 +14,8 @@
         password: "{{ vcenter_password }}"
         validate_certs: no
         folder: /ansiblevms
-        name: "{{ vm_name }}"
+        #name: "{{ vm_name }}"
+        name: elvis.labs.corp
         state: poweredon
         template: t-rhel7-v03
         disk:
@@ -45,14 +46,16 @@
           #mac: aa:bb:dd:aa:00:14
           type: static 
           #allow_guest_control: yes
-          ip: "{{ ip_address }}"
+          #ip: "{{ ip_address }}"
+          ip: 192.168.0.30
           netmask: 255.255.255.0 
           gateway: 192.168.0.10
           dns_servers: 192.168.0.220
           #wake_on_lan: yes
           #start_connected: yes
         customization: 
-          hostname: "{{ vm_name }}"
+          hostname: elvis.labs.corp
+          #hostname: "{{ vm_name }}"
           domain: labs.corp
         wait_for_ip_address: yes
      delegate_to: localhost
