@@ -19,5 +19,6 @@
      - name:  habilita repositorio 
        yum_repository:
          name: rhel-7-server-rpms 
-         state: absent
-       notify: yum-clean-metadata
+         state: present
+        enabled: yes
+       #notify: yum-clean-metadata
