@@ -7,7 +7,7 @@
  
     - name: configuracao de firewall padrao Caixa 
       firewalld:
-         service: "{{ item }}"
+         port: "{{ item }}"
          permanent: true
          state: enabled
          immediate: true 
