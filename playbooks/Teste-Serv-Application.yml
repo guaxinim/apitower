@@ -10,4 +10,9 @@
         method: GET
         return_content: yes
        register: _result
+
+     - name: Debug 
+       debug: 
+         msg: 
+         - Saida do teste '{{ _result }}' 
           
