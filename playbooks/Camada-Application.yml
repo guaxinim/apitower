@@ -2,6 +2,7 @@
 -
    name: instalacao camada de server application 
    hosts: all 
+   tasks: 
 
    - name: instala apache 
      yum: 
