@@ -1,0 +1,23 @@
+---
+-
+   name: repara servidor 
+   hosts: all 
+   vars_prompt:
+
+   tasks: 
+
+      - name: Disable all RHSM repositories
+        rhsm_repository:
+         name: '*'
+         state: disabled
+
+      - name: Enable repository rhel-7-server-rpms
+        rhsm_repository:
+         name: rhel-7-server-rpms
+
+      - name: instala open-vm tools 
+        yum: 
+          name: open-vm-tools
+          state: latest 
+
+    

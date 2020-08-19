@@ -1,0 +1,47 @@
+---
+-
+   name: clean servidor 
+   hosts: all 
+   vars_prompt:
+
+   tasks: 
+
+     - name: seta hostname 
+       shell: hostnamectl set-hostname localhost.localdomain 
+       
+     - name: Disable all RHSM repositories
+       rhsm_repository:
+         name: '*'
+         state: disabled
+
+     - name: remove subscricao
+       redhat_subscription:
+          state: absent
+      
+     - name: shell subscription clen 
+       shell: subscription-manager clean
+
+     - name: removendo chaves
+       shell: /etc/ssh/ssh_host_*
+
+     - name: sysconfig step 1 
+       shell: cat /usr/sbin/sys-unconfig
+
+     - name: sysconfig step 2 
+       shell: touch /.unconfigured
+
+     - name: sysconfig step 3 
+       shell: rm -f /etc/udev/rules.d/*-persistent-*.rules
+
+     - name: removendo rules 
+       shell:  rm -f /etc/udev/rules.d/70-persistent-net.rules
+
+     - name: reseta configuracao de rede 
+       nmcli:
+         conn_name: ens192
+         type: ethernet
+         ifname: '*'
+         state: absent 
+
+     - name: 
+       reboot:      
