@@ -9,5 +9,5 @@
         url: "{{ v_servidor_teste }}"
         method: GET
         return_content: yes
-        register: _result
+       register: _result
           
