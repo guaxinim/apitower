@@ -14,7 +14,7 @@
         password: "{{ vcenter_password }}"
         validate_certs: no
         folder: /ansiblevms
-        name: satellite01.labs.corp
+        name: "{{ vm_name }}"
         state: poweredon
         template: rhel-07-basico
         disk:
@@ -45,7 +45,7 @@
           mac: aa:bb:dd:aa:00:14
           type: static 
           allow_guest_control: yes
-          ip: 192.168.0.82
+          ip: "{{ ip_address }}"
           netmask: 255.255.255.0 
           gateway: 192.168.0.10
           wake_on_lan: yes
