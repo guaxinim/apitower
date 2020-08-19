@@ -20,7 +20,7 @@
          name: '*'
          state: disabled
 
-     - name: Disable all repositories except rhel-7-server-rpms
+     - name: Enable repository rhel-7-server-rpms
        rhsm_repository:
          name: rhel-7-server-rpms
       
