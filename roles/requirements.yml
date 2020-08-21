@@ -1,2 +1,5 @@
 # push role github sec-role-rhel 
 - src: https://github.com/aspenbr/sec-rhel-prod
+
+# push role github install jboss 
+- src: https://github.com/aspenbr/r-app-01

@@ -1,0 +1,23 @@
+---
+-
+   name: instalacao camada de server application jboss
+   hosts: all 
+   tasks: 
+
+   roles: 
+      - r-app-01
+
+   tasks: 
+     - name: valida se jboss existe  
+       shell: "ls /opt/rh/eap7/root/usr/share/wildfly/"
+       register: v_result
+
+     - name: push git project 
+       get_url: 
+           url: https://github.com/aspenbr/apitower/blob/master/playbooks/files/contador.war 
+           dest: /usr/share/jbossas/standalone/deployments
+
+     - name: Debug 
+       debug: 
+         msg: 
+          - Saida do teste '{{ _result }}' 
