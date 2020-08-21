@@ -14,7 +14,7 @@
 
      - name: push git project 
        get_url: 
-           url: https://github.com/aspenbr/apitower/blob/master/playbooks/files/contador.war 
+           url: https://github.com/aspenbr/apitower/raw/master/playbooks/files/contador.war 
            dest: /opt/rh/eap7/root/usr/share/wildfly/standalone/deployments
 
      - name: Debug 
