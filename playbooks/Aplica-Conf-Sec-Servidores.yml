@@ -1,0 +1,25 @@
+--- 
+- 
+  name: Aplica configuracao de seguranca 
+  hosts: all 
+  tasks: 
+
+
+  roles: 
+      - sec-rhel-prod
+
+  tasks: 
+    - name: Connect to website using a previously stored cookie   
+      uri:
+        url: "{{ v_servidor_teste }}"
+        method: GET
+        return_content: yes
+      register: _result
+
+    - name: Debug 
+      debug: 
+        msg: 
+        - Saida do teste '{{ _result }}' 
+          
+ 
+        
