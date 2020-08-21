@@ -11,7 +11,7 @@
           password: "{{ user_senha }}"
           auto_attach: true
           pool_ids:
-            - 8a85f9863f14fed3013f82b2c7b33615
+            - 8a85f98260c27fc50160c32cc4365ccb 
 
      
 
