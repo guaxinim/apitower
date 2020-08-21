@@ -5,8 +5,8 @@
   tasks: 
 
 
-  roles: 
-      - sec-rhel-prod
+  #roles: 
+  #    - sec-rhel-prod
 
   tasks: 
     - name: Connect to website using a previously stored cookie   
